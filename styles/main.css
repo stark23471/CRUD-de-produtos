@@ -216,8 +216,65 @@ input:focus, select:focus, textarea:focus {
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 620px) {
+  .panel { padding: 14px;}
   .panel__row { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .form-grid .span-2 { grid-column: span 1; }
   .cards { grid-template-columns: 1fr; }
+  input, select, textarea { padding: 12px; }
 }
+
+@media (max-width: 680px) {
+  .table thead {
+    display: none; /* esconde cabeçalho */
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    border-bottom: 1px solid rgba(37,41,58,.75);
+    padding: 10px;
+  }
+
+  .table td {
+    border: 0;
+    padding: 8px 0;
+  }
+
+  /* “Ações” sempre embaixo e com espaço */
+  .row-actions {
+    margin-top: 8px;
+    gap: 10px;
+  }
+
+  .row-actions .btn {
+    width: 100%;
+  }
+
+  .header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__actions {
+    width: 100%;
+  }
+
+  .header__actions .btn {
+    width: 100%;
+  }
+
+  .modal {
+    top: 12px;
+    transform: translateX(-50%);
+    max-height: calc(100vh - 24px);
+    overflow: auto;
+  }
+}
+
