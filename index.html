@@ -1,0 +1,109 @@
+<!-- File: index.html -->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CRUD Produtos (Vanilla JS)</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="header">
+      <div class="container header__inner">
+        <div>
+          <h1>CRUD de Produtos</h1>
+          <p class="muted">
+            Vanilla JS • UI “quase produção” • DummyJSON (CRUD simulado)
+          </p>
+        </div>
+
+        <div class="header__actions">
+          <button id="btnReload" class="btn btn--secondary" type="button">
+            Recarregar
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <!-- Mensagens de feedback -->
+      <section aria-live="polite" aria-atomic="true" class="toast-area" id="toastArea"></section>
+
+      <!-- Barra de ações -->
+      <section class="panel">
+        <div class="panel__row">
+          <div class="field">
+            <label for="searchInput">Buscar</label>
+            <input
+              id="searchInput"
+              name="search"
+              type="search"
+              placeholder="Buscar por título, marca ou categoria…"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="field field--small">
+            <label for="viewSelect">Visualização</label>
+            <select id="viewSelect" name="view">
+              <option value="table" selected>Tabela</option>
+              <option value="cards">Cards</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Create -->
+      <section class="panel">
+        <h2>Novo produto</h2>
+        <div id="createFormRoot"></div>
+      </section>
+
+      <!-- Read -->
+      <section class="panel">
+        <div class="panel__title-row">
+          <h2>Produtos</h2>
+          <div class="muted" id="resultsMeta">—</div>
+        </div>
+
+        <div class="list-root" id="productsRoot"></div>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-backdrop" id="modalBackdrop" hidden></div>
+
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      hidden
+    >
+      <div class="modal__header">
+        <h3 id="modalTitle">Editar produto</h3>
+        <button class="btn btn--ghost" type="button" id="modalClose" aria-label="Fechar modal">
+          ✕
+        </button>
+      </div>
+
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+
+    <!-- Scripts (ordem importa) -->
+    <script defer src="./src/config.js"></script>
+    <script defer src="./src/state.js"></script>
+    <script defer src="./src/utils/dom.js"></script>
+    <script defer src="./src/ui/notifications.js"></script>
+    <script defer src="./src/ui/modal.js"></script>
+    <script defer src="./src/apiClient.js"></script>
+    <script defer src="./src/productService.js"></script>
+    <script defer src="./src/ui/productForm.js"></script>
+    <script defer src="./src/ui/productsView.js"></script>
+    <script defer src="./src/app.js"></script>
+  </body>
+</html>
