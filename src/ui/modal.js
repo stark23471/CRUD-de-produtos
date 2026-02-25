@@ -1,15 +1,16 @@
 // File: src/ui/modal.js
+// esse arquivo  
 (function () {
   window.App = window.App || {};
 
-  const { qs, qsa } = App.dom;
+ const { qs, qsa } = App.dom;
 
   const backdrop = () => qs("#modalBackdrop");
   const modal = () => qs("#modal");
   const body = () => qs("#modalBody");
   const title = () => qs("#modalTitle");
   const closeBtn = () => qs("#modalClose");
-
+// armazena espaco
   let lastFocusedEl = null;
 
   function getFocusable(container) {

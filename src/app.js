@@ -17,13 +17,13 @@
 
   function wireTopControls() {
     qs("#btnReload").addEventListener("click", () => loadAndRender());
-
-    qs("#viewSelect").addEventListener("change", (e) => {
+//change= mudanca target= alvo
+    qs("#viewSelect").addEventListener("change", (e) => {console.log("evento completo:",e)
       App.state.set({ viewMode: e.target.value });
       rerender();
     });
-
-    qs("#searchInput").addEventListener("input", (e) => {
+//id="searchInput" linha 
+    qs("#searchInput").addEventListener("input", (e) => {console.log("evento completo:",e)
       App.state.set({ searchTerm: e.target.value });
       rerender();
     });
